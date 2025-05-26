@@ -1,3 +1,39 @@
+
+.idea/
+*.pclprof
+
+*.png
+*.jpeg
+*.svg
+*.pdf
+
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+.RDataTmp
+
+# RStudio files
+.Rproj.user/
+
+# User-specific files
+.Ruserdata
+
+# R Environment Variables
+.Renviron
+
+# knitr and R markdown default cache directories
+*_cache/
+/cache/
+
+# Output files from R CMD build
+/*.tar.gz
+
+# Output files from R CMD check
+/*.Rcheck/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
