@@ -14,10 +14,10 @@ remapped_dictionary_directory = root_directory.joinpath('dictionaries')
 acoustic_model_directory = root_directory.joinpath('acoustic_models')
 
 phone_remapping_paths = {
-    "czech": data_directory.joinpath("english_to_czech_phone_mapping.yaml"),
-    "german": data_directory.joinpath("english_to_german_phone_mapping.yaml"),
-    "mandarin": data_directory.joinpath("english_to_mandarin_phone_mapping.yaml"),
-    "arpa": data_directory.joinpath("english_to_arpa_phone_mapping.yaml"),
+    "czech": data_directory.joinpath("dictionary_mappings", "english_to_czech_phone_mapping.yaml"),
+    "german": data_directory.joinpath("dictionary_mappings", "english_to_german_phone_mapping.yaml"),
+    "mandarin": data_directory.joinpath("dictionary_mappings", "english_to_mandarin_phone_mapping.yaml"),
+    "arpa": data_directory.joinpath("dictionary_mappings", "english_to_arpa_phone_mapping.yaml"),
 }
 
 buckeye_remapping_paths = {
@@ -48,10 +48,13 @@ if __name__ == '__main__':
                 phone_mapping = yaml.load(f, yaml.SafeLoader)
             buckeye_mapping = {}
             for k, v in phone_mapping.items():
-                if v not in buckeye_mapping:
-                    buckeye_mapping[v] = set()
-                if k in mfa_phone_mapping:
-                    buckeye_mapping[v].update(mfa_phone_mapping[k])
+                if not isinstance(v, list):
+                    v = [v]
+                for v2 in v:
+                    if v2 not in buckeye_mapping:
+                        buckeye_mapping[v2] = set()
+                    if k in mfa_phone_mapping:
+                        buckeye_mapping[v2].update(mfa_phone_mapping[k])
             with open(buckeye_remapping_paths[dict_name], 'w', encoding='utf8') as f:
                 for k, v in buckeye_mapping.items():
                     buckeye_mapping[k] = sorted(v)

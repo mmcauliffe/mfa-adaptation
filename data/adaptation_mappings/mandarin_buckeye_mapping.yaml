@@ -12,28 +12,20 @@ aj:
 aw:
 - aw
 - awn
-b:
-- b
-c:
-- k
-cʰ:
-- k
-d:
-- d
-- dh
-- dx
-- t
-eː:
+e:
+- eh
+- ehn
+ej:
 - ej
 - ey
 - eyn
 f:
+- dh
 - f
 - th
-h:
-- h
-- hh
-iː:
+- v
+i:
+- ah
 - ih
 - ihn
 - iy
@@ -41,105 +33,118 @@ iː:
 j:
 - y
 k:
+- g
 - k
 kʰ:
 - k
+kʷ:
+- g
+- k
 l:
-- el
-- l
-l̩:
 - el
 - l
 m:
 - em
 - m
-m̩:
+mʲ:
+- em
+- m
+m̩˧:
 - em
 - m
 n:
 - en
 - n
 - nx
-n̩:
+n̩˥˩:
 - en
+- eng
 - n
 - nx
-oː:
+o j:
+- oy
+- oyn
+ow:
 - ow
 - own
 p:
 - p
 pʰ:
 - p
+pʲ:
+- b
+- p
+pʷ:
+- p
 s:
 - s
+- sh
+- z
 t:
+- d
+- dh
 - dx
 - t
 - th
 - tq
-tʃ:
+ts:
+- ch
+- jh
+tɕ:
+- ch
+- jh
+ʈʂ:
 - ch
 - jh
 tʰ:
 - t
-uː:
+tʲ:
+- d
+- dx
+- t
+- tq
+tʷ:
+- dx
+- t
+- tq
+u:
 - uh
 - uhn
 - uw
 - uwn
-v:
-- dh
-- v
+w:
 - w
-z:
-- z
-ç:
-- h
+x:
 - hh
 ŋ:
 - eng
 - n
 - ng
 - nx
-ɐ:
+ɕ:
+- sh
+ə:
 - ah
 - ahn
 - er
 - ern
 - r
-ɔ j:
-- oy
-- oyn
-ɔʏ:
-- oy
-- oyn
-ə:
-- ah
-- ahn
-ɛ:
-- eh
-- ehn
-ɟ:
-- g
-ɡ:
-- g
-ɪ:
-- ah
-- ih
-- ihn
 ɲ:
 - eng
 - n
 - ng
 - nx
-ʁ:
+ɻ:
 - er
 - ern
 - r
-ʃ:
+ʂ:
 - sh
+ʎ:
+- el
+- l
+ʐ:
 - zh
-ʊ:
-- uh
-- uhn
+ʔ:
+- t
+- tq

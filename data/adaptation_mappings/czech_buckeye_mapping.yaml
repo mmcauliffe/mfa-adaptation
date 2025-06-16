@@ -5,34 +5,31 @@ a:
 - aen
 - ao
 - aon
-aj:
+a j:
 - aj
 - ay
 - ayn
 aw:
 - aw
 - awn
+aː:
+- aa
+- aan
+- ao
+- aon
 b:
 - b
 c:
-- k
-cʰ:
 - k
 d:
 - d
 - dh
 - dx
-- t
-eː:
-- ej
-- ey
-- eyn
+dʒ:
+- jh
 f:
 - f
 - th
-h:
-- h
-- hh
 iː:
 - ih
 - ihn
@@ -41,8 +38,6 @@ iː:
 j:
 - y
 k:
-- k
-kʰ:
 - k
 l:
 - el
@@ -62,15 +57,24 @@ n:
 - nx
 n̩:
 - en
+- eng
 - n
 - nx
-oː:
+o j:
+- oy
+- oyn
+ow:
 - ow
 - own
 p:
 - p
-pʰ:
-- p
+r:
+- d
+- dx
+- er
+- ern
+- r
+- t
 s:
 - s
 t:
@@ -80,50 +84,52 @@ t:
 - tq
 tʃ:
 - ch
-- jh
-tʰ:
-- t
-uː:
+u:
 - uh
 - uhn
+- uw
+- uwn
+uː:
 - uw
 - uwn
 v:
 - dh
 - v
 - w
-z:
-- z
-ç:
+x:
 - h
 - hh
+z:
+- z
 ŋ:
 - eng
 - n
 - ng
 - nx
-ɐ:
+ə:
 - ah
 - ahn
 - er
 - ern
 - r
-ɔ j:
-- oy
-- oyn
-ɔʏ:
-- oy
-- oyn
-ə:
-- ah
-- ahn
 ɛ:
 - eh
 - ehn
+ɛ j:
+- ej
+- ey
+- eyn
+ɛː:
+- ej
+- ey
+- eyn
 ɟ:
 - g
 ɡ:
 - g
+ɦ:
+- h
+- hh
 ɪ:
 - ah
 - ih
@@ -133,13 +139,10 @@ z:
 - n
 - ng
 - nx
-ʁ:
-- er
-- ern
-- r
 ʃ:
 - sh
+ʒ:
 - zh
-ʊ:
-- uh
-- uhn
+ʔ:
+- t
+- tq

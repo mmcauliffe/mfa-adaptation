@@ -25,6 +25,7 @@ f:
 - th
 - v
 i:
+- ah
 - ih
 - ihn
 - iy
@@ -48,7 +49,7 @@ m:
 mʲ:
 - em
 - m
-m̩˧:
+m̩:
 - em
 - m
 n:
@@ -66,6 +67,7 @@ ow:
 - ow
 - own
 p:
+- b
 - p
 pʰ:
 - p
@@ -76,12 +78,18 @@ pʷ:
 - p
 s:
 - s
+- sh
 - z
 t:
 - d
+- dh
 - dx
 - t
+- th
 - tq
+ts:
+- ch
+- jh
 tɕ:
 - ch
 - jh
@@ -116,6 +124,9 @@ x:
 ə:
 - ah
 - ahn
+- er
+- ern
+- r
 ɲ:
 - eng
 - n
@@ -125,6 +136,14 @@ x:
 - er
 - ern
 - r
+ʂ:
+- sh
+ʈʂ:
+- ch
+- jh
+ʎ:
+- el
+- l
 ʐ:
 - zh
 ʔ:

@@ -32,7 +32,7 @@ uː: [uw, uwn]
 æː: [ae, aen]
 eɪ: [ey, eyn]
 ej: [ey, eyn, ej]
-ɪ: [ih, ihn]
+ɪ: [ih, ihn, ah]
 ð: dh
 ʃ: sh
 z: z
@@ -55,8 +55,10 @@ m̩: [em, m]
 m: [em, m]
 mʲ: [em, m]
 ɱ: [em, m]
+v: v
 vʲ: v
 vʷ: v
+f: f
 fʲ: f
 fʷ: f
 l: [el, l]
@@ -69,6 +71,7 @@ pʰ: p
 pʲ: p
 pʷ: p
 kp: p
+b: b
 bʲ: b
 ɡb: b
 tʰ: t
@@ -81,9 +84,11 @@ t: [tq, t,dx]
 t̪: [th, t]
 d: [dx, d]
 d̪: [dh, d]
+k: k
 kʰ: k
 kʷ: k
 k̚: [k, g]
+ɡʷ: g
 c: k
 cʰ: k
 cʷ: k

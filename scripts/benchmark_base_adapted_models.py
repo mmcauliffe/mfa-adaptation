@@ -40,18 +40,35 @@ mapping_files = {
 
 if __name__ == '__main__':
     for condition, (dictionary_path, model_path) in conditions.items():
-        print(condition)
-        output_directory = os.path.join(root_directory, 'alignments', condition)
-        if os.path.exists(output_directory):
-            continue
-        if not os.path.exists(model_path):
-            continue
-        if not os.path.exists(dictionary_path):
-            continue
+        output_model_path = acoustic_model_directory.joinpath(f'{condition}_adapted_base.zip')
+        output_directory = os.path.join(root_directory, 'alignments', f'{condition}_adapted_base')
+        if not output_model_path.exists():
+            if not model_path.exists():
+                continue
+            if not dictionary_path.exists():
+                continue
+            print(condition)
+            command = ['adapt',
+                       os.path.join(corpus_directory, 'buckeye_corpus_benchmark'),
+                       str(dictionary_path),
+                       str(model_path),
+                       str(output_model_path),
+                       '-j', '10',
+                       '--clean',
+                       '--no_debug',
+                       '--use_mp',
+                       '--use_cutoff_model',
+                       '--use_postgres',
+                       '--beam', '10', '--retry_beam', '40'
+                       ]
+            if condition == 'mandarin':
+                command += ['--language', 'unknown']
+            print(command)
+            mfa_cli(command, standalone_mode=False)
         command = ['align',
                    os.path.join(corpus_directory, 'buckeye_corpus_benchmark'),
                    str(dictionary_path),
-                   str(model_path),
+                   str(output_model_path),
                    str(output_directory),
                    '-j', '10',
                    '--clean',
