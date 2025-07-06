@@ -49,7 +49,7 @@ if __name__ == '__main__':
         if not os.path.exists(dictionary_path):
             continue
         command = ['align',
-                   os.path.join(corpus_directory, 'buckeye_corpus_benchmark'),
+                   os.path.join(corpus_directory, 'buckeye_corpus_source'),
                    str(dictionary_path),
                    str(model_path),
                    str(output_directory),
@@ -60,8 +60,8 @@ if __name__ == '__main__':
                    '--use_cutoff_model',
                    '--use_postgres',
                    '--cleanup_textgrids',
-                   '--reference_directory',
-                   os.path.join(corpus_directory, 'buckeye_reference_alignments'),
+                   #'--reference_directory',
+                   #os.path.join(corpus_directory, 'buckeye_reference_alignments'),
                    '--custom_mapping_path',
                     mapping_files[condition],
                    '--beam', '10', '--retry_beam', '40'

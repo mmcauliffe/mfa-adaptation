@@ -23,20 +23,54 @@ for (e in evals){
     data = bind_rows(data,d)
 }
 
-data$evaluation = factor(data$evaluation)
-
 
 data <- subset(data, !is.na(data$alignment_score))
 data = subset(data, word_count > 1)
 data = subset(data, !(word_count == 2 & reference_phone_count == 2))
 
-plotData <- summarySE(data=data, measurevar = 'alignment_score', groupvars=c('evaluation'))
+data$evaluation = factor(data$evaluation)
 
-ggplot(aes(x=evaluation, y=mean * 1000), data=plotData) + geom_point(size = 5, color='#FB5607') +
+data$language <- 'english'
+data[str_detect(data$evaluation, "mandarin"),]$language <- 'mandarin'
+data[str_detect(data$evaluation, "arpa"),]$language <- 'arpa'
+data[str_detect(data$evaluation, "czech"),]$language <- 'czech'
+data[str_detect(data$evaluation, "german"),]$language <- 'german'
+data$language <- factor(data$language)
+
+data$adaptation <- 'none'
+data[str_detect(data$evaluation, "adapted"),]$adaptation <- 'base'
+data[str_detect(data$evaluation, "manual"),]$adaptation <- 'manual'
+data[str_detect(data$evaluation, "mixed"),]$adaptation <- 'mixed'
+data$adaptation <- factor(data$adaptation, levels=c('none', 'base', 'manual', 'mixed'))
+
+speaker_subsets <- data[str_detect(data$evaluation, "_speakers"),]
+speaker_subsets$num_speakers <- as.numeric(str_extract(speaker_subsets$evaluation, '\\d+'))
+data <- data[!str_detect(data$evaluation, "_speakers"),]
+
+speakerplotData <- summarySE(data=speaker_subsets, measurevar = 'alignment_score', groupvars=c('language', 'num_speakers', 'adaptation'))
+
+plotData <- summarySE(data=data, measurevar = 'alignment_score', groupvars=c('evaluation'))
+baseplotData <- summarySE(data=data, measurevar = 'alignment_score', groupvars=c('language', 'adaptation'))
+
+t = speaker_subsets %>% subset(language == 'english' & adaptation == 'base' & speaker == 's37')
+t2 = speaker_subsets %>% subset(num_speakers == 34 & language == 'mandarin' & adaptation == 'base')
+
+t3 = t %>% group_by(utterance, num_speakers) %>% summarise(alignment_score=mean(alignment_score)) %>% group_by(utterance) %>% summarise(alignment_score=mean(alignment_score))
+t2 %>% group_by(speaker) %>% summarise(mean(alignment_score))
+
+ggplot(aes(x=num_speakers, y=mean * 1000, color=adaptation), data=speakerplotData) + geom_point(size = 5) +
+  geom_errorbar(aes(ymin = (mean - ci) * 1000, ymax = (mean + ci)* 1000),size=2, width=0.5) +
+  ylab('Phone boundary error (ms)') + xlab('Number of adaptation speakers') +ggtitle('Phone boundary errors') +
+  theme_memcauliffe() +facet_wrap(~language) + 
+  geom_hline(aes(yintercept=mean*1000, color=adaptation), data=baseplotData,size=2) + scale_color_manual(values=c('#D43610','#8338EC','#6EC200', "#FB5607")) #+ 
+  #geom_hline(aes(yintercept=mean*1000), data=subset(baseplotData, adaptation=='base'),color='#8338EC',size=2) + 
+  #geom_hline(aes(yintercept=mean*1000), data=subset(baseplotData, adaptation=='manual'),color='#6EC200',size=2)
+
+ggplot(aes(x=adaptation, y=mean * 1000), data=baseplotData) + geom_point(size = 5, color='#FB5607') +
   geom_errorbar(aes(ymin = (mean - ci) * 1000, ymax = (mean + ci)* 1000),size=2, width=0.5, color='#FB5607') +
   ylab('Phone boundary error (ms)') + xlab('Alignment condition') +ggtitle('Phone boundary errors') +
   theme_memcauliffe() +
-  scale_x_discrete(guide = guide_axis(n.dodge = 2))
+  scale_x_discrete(guide = guide_axis(n.dodge = 2)) +facet_wrap(~language)
 
 plotData <- summarySE(data=data, measurevar = 'phone_error_rate', groupvars=c('version', 'corpus','phone_set'))
 
