@@ -1,33 +1,26 @@
-# mfa-adaptation
+# One size does not fit all: Adapting the Montreal Forced Aligner (MFA) to your data
 
-Scripts and notebooks for performing and analyzing adaptation of Montreal Forced Alignment models
+This is the repository for a workshop given at the Linguistics Society of America Summer Institute 2025 on July 16th, 2025.
 
-## Details
+You can access the slides [here](static/LSA_2025_MFA_Workshop.pdf).
 
-Target: Buckeye Corpus
-Dictionary to adapt: english_us_mfa
 
-Models to adapt
+## Structure
 
-1. English
-   - Number of hours: 3,429.21
-   - Dictionary: english_us_mfa
-   - Dictionary: english_us_arpa
-2. German
-   - Number of hours: 1,314.66
-   - Model: german_mfa
-   - Open questions:
-     - ɾ is t?
-     - ɔj: ɔʏ? or ɔ j
-3. Mandarin
-   - Number of hours: 3,429.21
-   - Model: mandarin_mfa
-   - Open questions:
-     - Map ʊ to u or ə?
-     - ɾ: t?
-     - ɚ: ə? ɻ?
-4. Czech?
-   - Number of hours: 642.95
-   - Model: czech_mfa
-   - Open questions:
-     - ɝ: ə? ɝ: r̩?
+* [analysis/](analysis)
+  * R scripts that were used to generate summary statistics and plots
+* [scripts/](scripts)
+  * Python scripts that were used to generate adapted models and organize case study corpora
+* [data/](data)
+  * YAML mapping files for remapping dictionaries, and evaluating Buckeye alignments
+* [static/](static)
+  * Generated plots and slides
+* [experimental/](experimental)
+  * Experimental scripts for additional analyses not covered in the slides (subsets of corpora, using dictionaries based Buckeye phonetic pronunciations)
+
+
+## Acknowledgement
+
+Thank you for support from Canada Research Chair in Speech Variability.
+
+![CRC.png](static/CRC.png)

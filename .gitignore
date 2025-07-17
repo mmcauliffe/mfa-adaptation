@@ -1,11 +1,9 @@
-
+.DS_store
 .idea/
 *.pclprof
 
-*.png
 *.jpeg
 *.svg
-*.pdf
 
 # History files
 .Rhistory

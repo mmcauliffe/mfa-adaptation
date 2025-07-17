@@ -1,12 +1,17 @@
 import os
+import sys
 from pathlib import Path
 from montreal_forced_aligner.command_line.mfa import mfa_cli
 
-root_directory = Path(r'D:\Data\experiments\adaptation_benchmarking')
+if sys.platform == 'darwin':
+    root_directory = Path(r'/Users/michael/Documents/Data/experiments/adaptation_benchmarking')
+    corpus_directory = r'/Users/michael/Documents/Data/VariCS/varics_eval_benchmark'
+    reference_directory = r'/Users/michael/Documents/Data/VariCS/varics_naming_reference_alignments'
+else:
+    root_directory = Path(r'D:\Data\experiments\adaptation_benchmarking')
+    corpus_directory = r'C:\Users\micha\Documents\Data\VariCS\varics_naming_benchmark'
+    reference_directory = r'C:\Users\micha\Documents\Data\VariCS\varics_naming_reference_alignments'
 
-
-corpus_directory = r'C:\Users\micha\Documents\Data\VariCS\varics_naming_benchmark'
-reference_directory = r'C:\Users\micha\Documents\Data\VariCS\varics_naming_reference_alignments'
 
 acoustic_model_directory = root_directory.joinpath('acoustic_models')
 dictionary_directory = root_directory.joinpath('dictionaries')
@@ -37,7 +42,8 @@ if __name__ == '__main__':
                        '--use_mp',
                        '--use_cutoff_model',
                        '--use_postgres',
-                       '--beam', '10', '--retry_beam', '40'
+                       '--beam', '10', '--retry_beam', '40',
+                       '--use_reference_alignments', 'false'
                        ]
             print(command)
             mfa_cli(command, standalone_mode=False)
