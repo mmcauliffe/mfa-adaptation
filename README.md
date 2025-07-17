@@ -1,6 +1,6 @@
 # One size does not fit all: Adapting the Montreal Forced Aligner (MFA) to your data
 
-This is the repository for a workshop given at the Linguistics Society of America Summer Institute 2025 on July 16th, 2025.
+This is the repository for a [workshop given at the Linguistics Society of America Summer Institute 2025](https://center.uoregon.edu/LSA/2025/wednesday_events.php) on July 16th, 2025.
 
 You can access the slides [here](static/LSA_2025_MFA_Workshop.pdf).
 
