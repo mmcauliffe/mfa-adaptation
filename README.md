@@ -4,6 +4,7 @@ This is the repository for a workshop given at the Linguistics Society of Americ
 
 You can access the slides [here](static/LSA_2025_MFA_Workshop.pdf).
 
+![MFA-Adapt-ReferenceAlign-Flow.png](static/MFA-Adapt-ReferenceAlign-Flow.png)
 
 ## Structure
 
